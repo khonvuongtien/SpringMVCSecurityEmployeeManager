@@ -1,0 +1,12 @@
+com\kid\j5\model\Authorities.class
+com\kid\j5\controller\LoginController.class
+com\kid\j5\model\Staff.class
+com\kid\j5\model\StaffDAO.class
+com\kid\j5\model\Depart.class
+com\kid\j5\model\DepartDAO.class
+com\kid\j5\model\UserDAO.class
+com\kid\j5\model\RecordDAO$1.class
+com\kid\j5\controller\GeneralController.class
+com\kid\j5\model\RecordDAO.class
+com\kid\j5\model\User.class
+com\kid\j5\model\Record.class
