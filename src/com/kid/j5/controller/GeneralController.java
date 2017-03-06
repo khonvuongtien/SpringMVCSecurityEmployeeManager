@@ -246,6 +246,17 @@ public class GeneralController {
 
 			} 
 			else {
+				String imgName = staff.getStaffName()+staff.getDepart().getDepartId()+".jpg";
+				try {
+					image.transferTo(new File(context.getRealPath("/WEB-INF/jsps/images/")+imgName));
+				} catch (IllegalStateException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				staff.setPhoto(context.getContextPath()+"/static/images/"+imgName);
 				staffDAO.updateStaff(staff);
 				model.addAttribute("staffList", staffDAO.getStaffList(1));
 				model.addAttribute("staff", new Staff("","","M","","","","","") );

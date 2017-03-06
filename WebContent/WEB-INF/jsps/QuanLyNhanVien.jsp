@@ -143,7 +143,7 @@
   
   <div class="form-group">
     <label for="depart"><spring:message code="messages.staffdepart"></spring:message>:</label>
-    <sf:select type="text" class="form-control" path="depart.departId" id="depart" itemLabel="name" itemValue="DepartId" items="${departs}" onkeyup="checkChange(this)"/><br><sf:errors path="depart.name" cssStyle="color:red"></sf:errors>
+    <sf:select type="text" class="form-control" path="depart.departId" id="depart" itemLabel="name" itemValue="DepartId" items="${departs}" onchange="checkChange(this)"/><br><sf:errors path="depart.name" cssStyle="color:red"></sf:errors>
     
   </div>
   <div class="form-group">
@@ -168,6 +168,7 @@ function activateUpload(){
 	document.getElementById("upload").click();
 }
 function readURL(input) {
+	
 	var path=input.value;
 	var fileName = path.match(/[^\/\\]+$/);
 			document.getElementById("photo").value=fileName;
@@ -182,7 +183,7 @@ function readURL(input) {
 	            };
 	            reader.readAsDataURL(input.files[0]);
 	        }
-			
+	       checkChange(input);		
 			
 	    }
 
@@ -200,40 +201,20 @@ var btnId="";
 
 if(document.getElementById("true").checked){btnId = document.getElementById("true").id;}else{btnId = document.getElementById("false").id;}
 	
-	function readyToCheckChange(obj){
-		if(obj.id == document.getElementById("username").id){
-			if(username==""){
-			username = obj.value;
-			//alert("saved "+username+" with "+obj.value);
-			}
-			
-			}else if(obj.id == document.getElementById("pwd").id){
-				if(password==""){
-					password = obj.value;
-					//alert("saved "+password+" with "+obj.value);
-					}
-				
-				}else if (obj.id == document.getElementById("fullname").id){
-					if(fullname==""){fullname = obj.value;
-					//alert("saved "+fullname+" with "+obj.value);
-					}
-					
-					}
-		}
+	
 	function checkChange(obj){
-		/*alert("username: "+document.getElementById("username").value +" + "+username);
-		alert("password: "+document.getElementById("pwd").value +" + "+password);
-		alert("fullname: "+document.getElementById("fullname").value +" + "+fullname);*/
-		if(id!=""){
-				if(document.getElementById("id")==id){
-					if(document.getElementById("name")==name){
-						if(document.getElementById("bd")==bd){
-							if(document.getElementById("email")==email){
-								if(document.getElementById("phone")==phone){
-									if(document.getElementById("salary")==salary){
+		
+		
+		if(id!=""){			
+				if(document.getElementById("id").value==id){
+					if(document.getElementById("name").value==name){
+						if(document.getElementById("bd").value==bd){
+							if(document.getElementById("email").value==email){
+								if(document.getElementById("phone").value==phone){
+									if(document.getElementById("salary").value==salary){
 										
-										if(document.getElementById("depart")==depart){
-											if(document.getElementById("photo")==photo){
+										if(document.getElementById("depart").value==depart){
+											if(document.getElementById("photo").value==photo){
 												if(document.getElementById(btnId).checked){
 													document.getElementById("updateBtn").style.display="none";
 													}else{document.getElementById("updateBtn").style.display="inline";}
