@@ -18,21 +18,7 @@
 	
 	<context:property-placeholder
 		location="classpath:com/kid/j5/configs/jdbc.properties" />
-	<!-- <bean
-		class="org.springframework.jdbc.datasource.DataSourceTransactionManager"
-		id="transactionManager">
-	<property name="dataSource" ref="dataSource"></property>
-	</bean> 
-	<bean id="txManager"
-    class="org.springframework.orm.hibernate4.HibernateTransactionManager">
-    <property name="sessionFactory">
-        <ref bean="sessionFactory" />
-    </property>
-</bean>-->
-	<!-- DAO 
-	<bean class="com.kid.j5.model.UserDAO" id="userDAO">
-		<property name="sessionFactory" ref="sessionFactory"></property>
-	</bean>-->
+	<!--hibernate config -->
 	<bean
 		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean"
 		id="sessionFactory">
