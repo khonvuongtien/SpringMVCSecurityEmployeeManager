@@ -22,8 +22,6 @@ SessionFactory sessionFactory;
 	@Autowired
 	public void setSessionFactory(SessionFactory sessionFactory) {
 		this.sessionFactory = sessionFactory;
-	
-	System.out.println("set session factory and session");
 }
 
 	public Session session(){

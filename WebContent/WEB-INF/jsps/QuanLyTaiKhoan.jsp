@@ -25,10 +25,9 @@
 			<a href="index.html"><img src="${pageContext.request.contextPath }/static/images/logo.png" alt=""  title="logo"/></a>
 		</div>
 	<ul class="nav">
-	<ss:authorize access="isAuthenticated()">
-	<li><a href="${pageContext.request.contextPath}/logout">Logout</a></li>
+		<ss:authorize access="isAuthenticated()">
+	<li><a href="${pageContext.request.contextPath}/logout"><spring:message code="messages.logout"></spring:message></a></li>
 	</ss:authorize>
-		
 	</ul>
 	<!-- 
 	<div class="search">

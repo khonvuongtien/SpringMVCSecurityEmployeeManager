@@ -37,9 +37,7 @@ public class RecordDAO {
 		
 		@Autowired
 		public void setSessionFactory(SessionFactory sessionFactory) {
-			this.sessionFactory = sessionFactory;
-		
-		//System.out.println("set session factory and session");
+			this.sessionFactory = sessionFactory;			
 	}
 
 		public Session session(){
